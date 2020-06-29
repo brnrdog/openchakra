@@ -1,25 +1,25 @@
-import React from "react";
-import { Input } from "@chakra-ui/core";
-import FormControl from "../../controls/FormControl";
-import { useForm } from "../../../../hooks/useForm";
-import usePropsSelector from "../../../../hooks/usePropsSelector";
+import React from 'react'
+import { Input } from '@chakra-ui/core'
+import FormControl from '../../controls/FormControl'
+import { useForm } from '../../../../hooks/useForm'
+import usePropsSelector from '../../../../hooks/usePropsSelector'
 
 const ImagePanel = () => {
-  const { setValueFromEvent } = useForm();
+  const { setValueFromEvent } = useForm()
 
-  const src = usePropsSelector("src");
-  const fallbackSrc = usePropsSelector("fallbackSrc");
-  const alt = usePropsSelector("alt");
-  const htmlHeight = usePropsSelector("htmlHeight");
-  const htmlWidth = usePropsSelector("htmlWidth");
+  const src = usePropsSelector('src')
+  const fallbackSrc = usePropsSelector('fallbackSrc')
+  const alt = usePropsSelector('alt')
+  const htmlHeight = usePropsSelector('htmlHeight')
+  const htmlWidth = usePropsSelector('htmlWidth')
 
   return (
     <>
       <FormControl label="Source" htmlFor="src">
         <Input
           placeholder="Image URL"
-          value={src || ""}
-          size="sm"
+          value={src || ''}
+          boxSize="sm"
           name="src"
           onChange={setValueFromEvent}
         />
@@ -28,8 +28,8 @@ const ImagePanel = () => {
       <FormControl label="Fallback Src" htmlFor="fallbackSrc">
         <Input
           placeholder="Image URL"
-          value={fallbackSrc || ""}
-          size="sm"
+          value={fallbackSrc || ''}
+          boxSize="sm"
           name="fallbackSrc"
           onChange={setValueFromEvent}
         />
@@ -37,8 +37,8 @@ const ImagePanel = () => {
 
       <FormControl label="Alt" htmlFor="alt">
         <Input
-          value={alt || ""}
-          size="sm"
+          value={alt || ''}
+          boxSize="sm"
           name="alt"
           onChange={setValueFromEvent}
         />
@@ -46,8 +46,8 @@ const ImagePanel = () => {
 
       <FormControl label="Html height" htmlFor="htmlHeight">
         <Input
-          value={htmlHeight || ""}
-          size="sm"
+          value={htmlHeight || ''}
+          boxSize="sm"
           name="htmlHeight"
           onChange={setValueFromEvent}
         />
@@ -55,14 +55,14 @@ const ImagePanel = () => {
 
       <FormControl label="Html width" htmlFor="htmlWidth">
         <Input
-          value={htmlWidth || ""}
-          size="sm"
+          value={htmlWidth || ''}
+          boxSize="sm"
           name="htmlWidth"
           onChange={setValueFromEvent}
         />
       </FormControl>
     </>
-  );
-};
+  )
+}
 
-export default ImagePanel;
+export default ImagePanel

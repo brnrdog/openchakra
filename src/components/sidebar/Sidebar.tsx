@@ -27,7 +27,7 @@ const menuItems: MenuItems = {
     children: {
       Accordion: {},
       AccordionItem: {},
-      AccordionHeader: {},
+      AccordionButton: {},
       AccordionPanel: {},
       AccordionIcon: {},
     },
@@ -126,7 +126,7 @@ const Menu = () => {
         maxH="calc(100vh - 3rem)"
         overflowY="auto"
         overflowX="visible"
-        shadow="xl"
+        boxShadow="xl"
         flex="0 0 14rem"
         p={5}
         m={0}
@@ -134,14 +134,14 @@ const Menu = () => {
         backgroundColor="#2e3748"
         width="15rem"
       >
-        <InputGroup size="sm" mb={4}>
+        <InputGroup boxSize="sm" mb={4}>
           <InputRightElement>
             {searchTerm ? (
               <IconButton
                 color="gray.300"
                 aria-label="clear"
                 icon="close"
-                size="xs"
+                boxSize="xs"
                 onClick={() => setSearchTerm('')}
               >
                 x

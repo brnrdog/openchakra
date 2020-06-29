@@ -45,7 +45,7 @@ const InputSuggestion: React.FC<FormControlPropType> = ({
         onChange={handleChange}
         as={Input}
         aria-labelledby={name}
-        size="sm"
+        boxSize="sm"
         autoComplete="off"
       />
 

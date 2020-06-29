@@ -100,17 +100,17 @@ export const generateCode = async (components: IComponents) => {
 
   code = `import React from 'react';
 import {
-  ThemeProvider,
+  ChakraProvider,
   CSSReset,
   theme,
   ${imports.join(',')}
 } from "@chakra-ui/core";
 
 const App = () => (
-  <ThemeProvider theme={theme}>
+  <ChakraProvider theme={theme}>
     <CSSReset />
     ${code}
-  </ThemeProvider>
+  </ChakraProvider>
 );
 
 export default App;`

@@ -49,15 +49,15 @@ describe('Code utils', () => {
     const code = await generateCode(componentFixtures)
 
     expect(code).toEqual(`import React from 'react'
-import { ThemeProvider, CSSReset, theme, Box, Text } from '@chakra-ui/core'
+import { ChakraProvider, CSSReset, theme, Box, Text } from '@chakra-ui/core'
 
 const App = () => (
-  <ThemeProvider theme={theme}>
+  <ChakraProvider theme={theme}>
     <CSSReset />
     <Box bg="whatsapp.500">
       <Text>Lorem Ipsum</Text>
     </Box>
-  </ThemeProvider>
+  </ChakraProvider>
 )
 
 export default App

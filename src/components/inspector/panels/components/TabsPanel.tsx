@@ -1,17 +1,17 @@
-import React from "react";
-import { Select } from "@chakra-ui/core";
-import FormControl from "../../controls/FormControl";
-import { useForm } from "../../../../hooks/useForm";
-import ColorsControl from "../../controls/ColorsControl";
-import usePropsSelector from "../../../../hooks/usePropsSelector";
-import SwitchControl from "../../controls/SwitchControl";
+import React from 'react'
+import { Select } from '@chakra-ui/core'
+import FormControl from '../../controls/FormControl'
+import { useForm } from '../../../../hooks/useForm'
+import ColorsControl from '../../controls/ColorsControl'
+import usePropsSelector from '../../../../hooks/usePropsSelector'
+import SwitchControl from '../../controls/SwitchControl'
 
 const TabsPanel = () => {
-  const { setValueFromEvent } = useForm();
+  const { setValueFromEvent } = useForm()
 
-  const variant = usePropsSelector("variant");
-  const orientation = usePropsSelector("orientation");
-  const size = usePropsSelector("size");
+  const variant = usePropsSelector('variant')
+  const orientation = usePropsSelector('orientation')
+  const size = usePropsSelector('size')
 
   return (
     <>
@@ -22,8 +22,8 @@ const TabsPanel = () => {
         <Select
           name="variant"
           id="variant"
-          size="sm"
-          value={variant || ""}
+          boxSize="sm"
+          value={variant || ''}
           onChange={setValueFromEvent}
         >
           <option>line</option>
@@ -39,8 +39,8 @@ const TabsPanel = () => {
         <Select
           name="orientation"
           id="orientation"
-          size="sm"
-          value={orientation || ""}
+          boxSize="sm"
+          value={orientation || ''}
           onChange={setValueFromEvent}
         >
           <option>horizontal</option>
@@ -52,8 +52,8 @@ const TabsPanel = () => {
         <Select
           name="size"
           id="size"
-          size="sm"
-          value={size || ""}
+          boxSize="sm"
+          value={size || ''}
           onChange={setValueFromEvent}
         >
           <option>sm</option>
@@ -61,9 +61,9 @@ const TabsPanel = () => {
           <option>lg</option>
         </Select>
       </FormControl>
-      <ColorsControl label="Variant Color" name="variantColor" />
+      <ColorsControl label="Color Scheme" name="colorScheme" />
     </>
-  );
-};
+  )
+}
 
-export default TabsPanel;
+export default TabsPanel

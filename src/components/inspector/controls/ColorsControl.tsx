@@ -50,7 +50,7 @@ const ColorsControl = (props: ColorControlPropsType) => {
 
   let propsIconButton: any = { bg: value }
   if (value && themeColors[value]) {
-    propsIconButton = { variantColor: value }
+    propsIconButton = { colorScheme: value }
   }
 
   const huesPicker = (
@@ -60,7 +60,7 @@ const ColorsControl = (props: ColorControlPropsType) => {
           <PseudoBox
             border={colorName.includes('white') ? '1px solid lightgrey' : ''}
             key={colorName}
-            _hover={{ shadow: 'lg' }}
+            _hover={{ boxboxShadow: 'lg' }}
             cursor="pointer"
             bg={`${colorName}.${props.enableHues ? hue : 500}`}
             onClick={() =>
@@ -70,7 +70,7 @@ const ColorsControl = (props: ColorControlPropsType) => {
               )
             }
             mt={2}
-            rounded="full"
+            borderRadius="full"
             height="30px"
             width="30px"
           />
@@ -91,7 +91,7 @@ const ColorsControl = (props: ColorControlPropsType) => {
           <SliderTrack />
           <SliderFilledTrack />
           <SliderThumb size={8}>
-            <Box rounded="full" fontSize="xs">
+            <Box borderRadius="full" fontSize="xs">
               {hue}
             </Box>
           </SliderThumb>
@@ -106,11 +106,11 @@ const ColorsControl = (props: ColorControlPropsType) => {
         <PopoverTrigger>
           <IconButton
             mr={2}
-            shadow="md"
+            boxShadow="md"
             border={value ? 'none' : '2px solid grey'}
             isRound
             aria-label="Color"
-            size="xs"
+            boxSize="xs"
             {...propsIconButton}
           >
             {props.label}
@@ -120,7 +120,11 @@ const ColorsControl = (props: ColorControlPropsType) => {
           <PopoverArrow />
           <PopoverBody>
             {props.withFullColor ? (
-              <Tabs size="sm" variant="soft-rounded" variantColor="green">
+              <Tabs
+                boxSize="sm"
+                variant="soft-borderRadius"
+                colorScheme="green"
+              >
                 <TabList>
                   <Tab>Theme</Tab>
                   <Tab>All</Tab>
@@ -149,7 +153,7 @@ const ColorsControl = (props: ColorControlPropsType) => {
       </Popover>
       <Input
         width="100px"
-        size="sm"
+        boxSize="sm"
         name={props.name}
         onChange={setValueFromEvent}
         value={value}
