@@ -150,7 +150,6 @@ const Menu = () => {
               <Icon name="search" color="gray.300" />
             )}
           </InputRightElement>
-          )}
           <Input
             value={searchTerm}
             color="gray.300"
