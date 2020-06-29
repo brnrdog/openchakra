@@ -2,12 +2,7 @@ import React, { memo, useMemo } from 'react'
 import FormControl from '../../controls/FormControl'
 import { useForm } from '../../../../hooks/useForm'
 import usePropsSelector from '../../../../hooks/usePropsSelector'
-import {
-  Slider,
-  SliderTrack,
-  SliderFilledTrack,
-  SliderThumb,
-} from '@chakra-ui/core'
+import { SliderTrack, SliderFilledTrack } from '@chakra-ui/core'
 import TextControl from '../../controls/TextControl'
 
 const EffectsPanel = () => {
@@ -21,15 +16,13 @@ const EffectsPanel = () => {
   return (
     <>
       <FormControl label="Opacity">
-        <Slider
+        <SliderTrack
           min={1}
           onChange={value => setValue('opacity', value / 100)}
           value={normalizedOpacity}
         >
-          <SliderTrack />
           <SliderFilledTrack />
-          <SliderThumb />
-        </Slider>
+        </SliderTrack>
       </FormControl>
 
       <TextControl name="boxShadow" label="Box Shadow" />
