@@ -5,6 +5,7 @@ import { Box, Flex, Stack, Button } from '@chakra-ui/core'
 import { FaBomb } from 'react-icons/fa'
 import { gridStyles } from '../editor/Editor'
 import { bugsnagClient } from '../../utils/bugsnag'
+import { CheckCircleIcon } from '@chakra-ui/icons'
 
 type ErrorBoundaryState = {
   hasError: boolean
@@ -40,7 +41,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
         >
           <Stack
             alignItems="center"
-            isInline
+            direction="row"
             spacing={8}
             bg="white"
             px={6}
@@ -59,7 +60,8 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
                   this.setState({ hasError: false })
                 }}
                 variant="outline"
-                rightIcon="check-circle"
+                //@ts-ignore
+                rightIcon={<CheckCircleIcon />}
                 boxSize="sm"
                 mt={4}
                 display="block"

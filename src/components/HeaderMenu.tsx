@@ -54,7 +54,7 @@ const HeaderMenu = () => {
   const dispatch = useDispatch()
 
   return (
-    <Menu zIndex={100}>
+    <Menu>
       <CustomMenuButton
         rightIcon="chevron-down"
         as={Button}

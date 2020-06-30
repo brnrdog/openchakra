@@ -5,7 +5,6 @@ import {
   PopoverContent,
   PopoverArrow,
   Grid,
-  PseudoBox,
   PopoverBody,
   IconButton,
   SliderTrack,
@@ -56,10 +55,10 @@ const ColorsControl = (props: ColorControlPropsType) => {
     <>
       <Grid mb={2} templateColumns="repeat(5, 1fr)" gap={0}>
         {Object.keys(themeColors).map(colorName => (
-          <PseudoBox
+          <Box
             border={colorName.includes('white') ? '1px solid lightgrey' : ''}
             key={colorName}
-            _hover={{ boxboxShadow: 'lg' }}
+            _hover={{ boxShadow: 'lg' }}
             cursor="pointer"
             bg={`${colorName}.${props.enableHues ? hue : 500}`}
             onClick={() =>
@@ -80,7 +79,9 @@ const ColorsControl = (props: ColorControlPropsType) => {
         <>
           <SliderTrack
             onChange={value => {
+              //@ts-ignore
               value = value === 0 ? 50 : value
+              //@ts-ignore
               setHue(value)
             }}
             min={0}
@@ -90,7 +91,7 @@ const ColorsControl = (props: ColorControlPropsType) => {
           >
             <SliderFilledTrack />
           </SliderTrack>
-          <SliderThumb size={8}>
+          <SliderThumb boxSize={8}>
             <Box borderRadius="full" fontSize="xs">
               {hue}
             </Box>
