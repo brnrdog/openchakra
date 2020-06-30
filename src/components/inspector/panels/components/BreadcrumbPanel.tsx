@@ -1,6 +1,5 @@
 import React, { memo } from 'react'
 import TextControl from '../../controls/TextControl'
-import SwitchControl from '../../controls/SwitchControl'
 
 const BreadcrumbPanel = () => {
   return (

@@ -16,6 +16,7 @@ import ActionButton from './ActionButton'
 import { generateComponentCode } from '../../utils/code'
 import useClipboard from '../../hooks/useClipboard'
 import { useInspectorUpdate } from '../../contexts/inspector-context'
+import { CopyIcon, CheckIcon } from '@chakra-ui/icons'
 
 const CodeActionButton = memo(() => {
   const [isLoading, setIsLoading] = useState(false)
@@ -40,7 +41,8 @@ const CodeActionButton = memo(() => {
         onCopy(code)
         setIsLoading(false)
       }}
-      icon={hasCopied ? 'check' : GoCode}
+      //@ts-ignore
+      icon={hasCopied ? <CheckIcon /> : <GoCode />}
     />
   )
 })
@@ -82,7 +84,7 @@ const Inspector = () => {
         </Box>
         {!isRoot && (
           <Stack
-            isInline
+            direction="row"
             py={2}
             spacing={4}
             align="center"
@@ -95,11 +97,12 @@ const Inspector = () => {
             <ActionButton
               label="Duplicate"
               onClick={() => dispatch.components.duplicate()}
-              icon="copy"
+              //@ts-ignore
+              icon={<CopyIcon />}
             />
             <ActionButton
               label="Reset props"
-              icon={IoMdRefresh}
+              icon={<IoMdRefresh />}
               onClick={() => dispatch.components.resetProps(component.id)}
             />
             <ActionButton
@@ -111,13 +114,13 @@ const Inspector = () => {
                   '_blank',
                 )
               }}
-              icon={GoRepo}
+              icon={<GoRepo />}
             />
             <ActionButton
               bg="red.500"
               label="Remove"
               onClick={() => dispatch.components.deleteComponent(component.id)}
-              icon={FiTrash2}
+              icon={<FiTrash2 />}
             />
           </Stack>
         )}

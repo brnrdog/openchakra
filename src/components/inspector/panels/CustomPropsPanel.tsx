@@ -15,6 +15,7 @@ import {
 } from '@chakra-ui/core'
 import useDispatch from '../../../hooks/useDispatch'
 import { useForm } from '../../../hooks/useForm'
+import { EditIcon, SmallCloseIcon } from '@chakra-ui/icons'
 
 const SEPARATOR = '='
 
@@ -99,14 +100,16 @@ const CustomPropsPanel = () => {
               variant="ghost"
               boxSize="xs"
               aria-label="edit"
-              icon="edit"
+              //@ts-ignore
+              icon={<EditIcon />}
             />
             <IconButton
               onClick={() => onDelete(propsName)}
               variant="ghost"
               boxSize="xs"
               aria-label="delete"
-              icon="small-close"
+              //@ts-ignore
+              icon={<SmallCloseIcon />}
             />
           </ButtonGroup>
         </Flex>
