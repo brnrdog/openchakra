@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-import { ChakraProvider, CSSReset, theme } from '@chakra-ui/core'
+import { ChakraProvider, CSSReset } from '@chakra-ui/core'
 import { Provider } from 'react-redux'
+import theme from './chakra'
 
 import { store } from './core/store'
 import { ErrorBoundary as BugsnagErrorBoundary } from './utils/bugsnag'
