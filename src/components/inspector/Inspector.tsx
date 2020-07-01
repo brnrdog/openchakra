@@ -41,8 +41,7 @@ const CodeActionButton = memo(() => {
         onCopy(code)
         setIsLoading(false)
       }}
-      //@ts-ignore
-      icon={hasCopied ? <CheckIcon /> : <GoCode />}
+      icon={hasCopied ? <CheckIcon path="" /> : <GoCode />}
     />
   )
 })
@@ -97,8 +96,7 @@ const Inspector = () => {
             <ActionButton
               label="Duplicate"
               onClick={() => dispatch.components.duplicate()}
-              //@ts-ignore
-              icon={<CopyIcon />}
+              icon={<CopyIcon path="" />}
             />
             <ActionButton
               label="Reset props"
